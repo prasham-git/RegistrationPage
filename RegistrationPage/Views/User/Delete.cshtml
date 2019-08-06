@@ -1,0 +1,24 @@
+﻿@model RegistrationPage.Models.User
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete User</h2>
+
+<ul class="userlist">
+    <li>Id : @Model.Uid</li>
+    <li>Name : @Model.Uname</li>
+    <li>Email : @Model.Uemail</li>
+    <li>Phone : @Model.Uphone</li>
+    <li>Gender : @Model.Ugender</li>
+    <li>Dob : @Model.Udob</li>
+</ul>
+
+<p>Are you want to delete this user ?</p>
+
+@using (Html.BeginForm("Delete", "User", FormMethod.Post))
+{
+    <input type="submit" value="Delete" class="btn btn-primary" />
+    @Html.ActionLink("Cancel", "Display", "User", null, new { @class = "btn btn-primary" })
+}

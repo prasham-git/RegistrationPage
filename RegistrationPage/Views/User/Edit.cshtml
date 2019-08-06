@@ -1,0 +1,50 @@
+﻿
+
+@model RegistrationPage.Models.User
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<table>
+    @using (Html.BeginForm("Edit", "User", FormMethod.Post))
+    {
+        <tr>
+            <td>@Html.LabelFor(t => t.Uname)</td>
+            <td>@Html.TextBoxFor(t => t.Uname, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(t => t.Uname, "", new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(t => t.Upassword)</td>
+            <td>@Html.PasswordFor(t => t.Upassword, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(t => t.Upassword, "", new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(t => t.Uemail)</td>
+            <td>@Html.TextBoxFor(t => t.Uemail, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(t => t.Uphone)</td>
+            <td>@Html.TextBoxFor(t => t.Uphone, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(t => t.Ugender)</td>
+            <td>
+                @Html.RadioButtonFor(t => t.Ugender, "Male") Male
+                @Html.RadioButtonFor(t => t.Ugender, "Female") Female
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(t => t.Udob)</td>
+            <td>@Html.TextBoxFor(t => t.Udob, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </td>
+        </tr>
+    }
+</table>
+

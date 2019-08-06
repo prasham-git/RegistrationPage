@@ -1,0 +1,83 @@
+﻿@model RegistrationPage.Models.User
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h1>Enter the Registration Details</h1>
+
+@using (Html.BeginForm("Create","User",FormMethod.Post))
+{
+    <div>
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Uid)
+                </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Uid)
+                    @Html.ValidationMessageFor(t => t.Uid, "", new { @class = "text-danger" })
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Uname)
+                </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Uname)
+                    @Html.ValidationMessageFor(t => t.Uname, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Upassword)
+                </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Upassword)
+                    @Html.ValidationMessageFor(t => t.Upassword, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Uemail)
+                </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Uemail)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Uphone)
+                </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Uphone)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Ugender)
+                </td>
+                <td>
+                    Male @Html.RadioButtonFor(t => t.Ugender, "Male")
+                    Female @Html.RadioButtonFor(t => t.Ugender, "Female")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Udob)
+                </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Udob)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Register" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}

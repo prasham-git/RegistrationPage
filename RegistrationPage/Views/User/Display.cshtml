@@ -1,0 +1,39 @@
+﻿@model IEnumerable<RegistrationPage.Models.User>
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(t => item.Uid)</th>
+                    <td>@Html.DisplayFor(t => item.Uname)</td>
+                    <td>
+                        @Html.ActionLink("View", "Detail", new { id = item.Uid }) 
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Uid }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Uid })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div>
+    <button > @Html.ActionLink("Logout","Logout", "Login") </button>
+</div>
+
+

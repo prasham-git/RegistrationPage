@@ -1,0 +1,17 @@
+﻿
+@model IEnumerable<RegistrationPage.Models.User>
+
+
+@{
+    ViewBag.Title = "Search Result";
+}
+
+<h2>Searched for <b>@TempData["Query"]</b></b></h2>
+
+<p>@TempData["Error"]</p>
+@{
+    foreach (var item in Model)
+    {
+        @Html.ActionLink(item.Uname, "Detail", new { id = item.Uid }, new { @class = "btn btn-primary mr-3 my-sm-0" })
+    }
+}
